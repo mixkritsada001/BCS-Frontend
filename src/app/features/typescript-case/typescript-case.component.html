@@ -1,0 +1,13 @@
+<p>TYPE : {{ title }}</p>
+<span *ngIf="text != ''">Text : {{ text }}</span>
+
+<div *ngFor="let item of cardLists">
+  <app-card
+    [id]="item.id"
+    [number]="item.number"
+    (buttonClick)="onCardClick()"
+    (numberButtonClick)="onCardNumberClick($event)"
+  ></app-card>
+</div>
+<button (click)="onClick()">Click</button>
+<button (click)="onToCardClick()">Click To Card</button>
