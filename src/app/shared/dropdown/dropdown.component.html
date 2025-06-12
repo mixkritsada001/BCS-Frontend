@@ -1,0 +1,25 @@
+<div style="position: relative; padding-bottom: 20px">
+  <div [ngClass]="{ 'bg-gray-200': disable }">
+    <p-dropdown
+      [id]="id"
+      [options]="options"
+      [(ngModel)]="value"
+      optionLabel="text"
+      optionValue="value"
+      [disabled]="disable"
+      [ngClass]="{ 'w-full': isFull }"
+      (onChange)="onSeleteChange($event)"
+      [placeholder]="placeHolder"
+      appendTo="body"
+      [ariaExpanded]="true"
+      [filter]="filter"
+    ></p-dropdown>
+  </div>
+  <small
+    style="position: absolute; left: 0; bottom: -3px"
+    *ngIf="isInvalid === true"
+    class="p-error"
+  >
+    {{ errorMessage }}
+  </small>
+</div>

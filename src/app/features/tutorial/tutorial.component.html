@@ -1,4 +1,85 @@
-<app-top-nav-bar></app-top-nav-bar>
-<app-side-nav-bar></app-side-nav-bar>
+<div class="p-8 max-w-3xl mx-auto space-y-10 text-gray-800">
+  <!-- 📝 Textfield -->
+  <section>
+    <h2 class="text-lg font-bold mb-1">Textfield</h2>
 
-<p>tutorial works!</p>
+    <app-textfield
+      [id]="'username'"
+      [placeHolder]="'Enter your username'"
+      [disable]="false"
+      [value]="'MixDev'"
+      [isInvalid]="true"
+      [errorMessage]="'Username is required'"
+    ></app-textfield>
+  </section>
+
+  <!-- ☑️ Checkbox -->
+  <section>
+    <h2 class="text-lg font-bold mb-1">Checkbox</h2>
+
+    <app-checkbox
+      [value]="true"
+      [text]="'Accept Terms & Conditions'"
+      [fromTable]="false"
+      [addClass]="'my-custom-class'"
+      [disable]="false"
+      (onChange)="handleCheckboxChange($event)"
+    ></app-checkbox>
+  </section>
+
+  <!-- 🔽 Dropdown -->
+  <section>
+    <h2 class="text-lg font-bold mb-1">Dropdown</h2>
+
+    <app-dropdown
+      [id]="'country'"
+      [value]="'th'"
+      [options]="[
+        { id: '1', value: 'th', text: 'Thailand' },
+        { id: '2', value: 'jp', text: 'Japan' },
+        { id: '3', value: 'kr', text: 'Korea', disable: true }
+      ]"
+      [header]="'Select Country'"
+      [placeHolder]="'Choose a country'"
+      [addClass]="'w-64'"
+      [disable]="false"
+      [isInvalid]="false"
+      [isFull]="true"
+      [errorMessage]="'Please select a country'"
+      [filter]="true"
+      (onChange)="handleCountryChange($event)"
+    ></app-dropdown>
+  </section>
+
+  <!-- 🔘 Radio -->
+  <section>
+    <h2 class="text-lg font-bold mb-1">Radio Button</h2>
+
+    <app-radio-button
+      [id]="'gender'"
+      [value]="'male'"
+      [options]="[
+        { id: '1', value: 'male', text: 'Male' },
+        { id: '2', value: 'female', text: 'Female' },
+        { id: '3', value: 'other', text: 'Other' }
+      ]"
+      [disable]="false"
+      [canBeNull]="false"
+      [noWrap]="false"
+      (onChange)="handleGenderChange($event)"
+    ></app-radio-button>
+  </section>
+
+  <!-- 🔁 Toggle -->
+  <!-- มันพังอยู่กำลังแก้ไข -->
+  <!-- <section>
+    <h2 class="text-lg font-bold mb-1">Toggle Switch</h2>
+  
+    <app-toggle
+      [id]="'darkModeToggle'"
+      [value]="true"
+      [disable]="false"
+      (onChange)="handleToggleChange($event)"
+    ></app-toggle>
+  </section> -->
+</div>

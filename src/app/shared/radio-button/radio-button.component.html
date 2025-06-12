@@ -1,0 +1,26 @@
+<div class="card flex justify-content-center mt-3">
+  <div class="flex flex-column gap-3">
+    <div
+      *ngFor="let option of options"
+      class="field-checkbox custom-radio-button"
+    >
+      <p-radioButton
+        [inputId]="option.id"
+        [name]="option.text ?? option.id"
+        [value]="
+          canBeNull && value === null && value === option.value
+            ? null
+            : option.isNot && value !== option.isNot && value !== null
+            ? value
+            : option.value
+        "
+        [disabled]="disable"
+        [(ngModel)]="value"
+        (onClick)="onClick($event)"
+      />
+      <span class="ml-2" [ngClass]="{ 'whitespace-nowrap': noWrap }">
+        {{ option.text }}
+      </span>
+    </div>
+  </div>
+</div>

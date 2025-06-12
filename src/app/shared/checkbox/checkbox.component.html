@@ -1,0 +1,11 @@
+<div class="flex items-center">
+  <p-checkbox
+    [(ngModel)]="value"
+    [binary]="true"
+    inputId="binary"
+    [label]="text"
+    [ngClass]="getClasses()"
+    [disabled]="disable"
+    (onChange)="onClick($event)"
+  />
+</div>

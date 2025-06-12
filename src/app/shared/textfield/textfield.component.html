@@ -1,0 +1,18 @@
+<div style="position: relative; padding-bottom: 20px; width: 100%">
+  <input
+    [id]="id"
+    pInputText
+    [placeholder]="placeHolder"
+    [(ngModel)]="value"
+    (input)="onInput($event)"
+    [disabled]="disable"
+    class="form-input !disabled:bg-white border border-gray rounded-lg p-2 YT text-base focus:border-blue-300 focus:ring-blue-300 disabled:bg-gray-200"
+  />
+  <small
+    style="position: absolute; left: 0; bottom: -3px"
+    *ngIf="isInvalid === true"
+    class="p-error"
+  >
+    {{ errorMessage }}
+  </small>
+</div>

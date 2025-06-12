@@ -18,7 +18,6 @@ export class CardComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-
   onClick(): void {
     this.buttonClick.emit();
   }

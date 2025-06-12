@@ -1,0 +1,14 @@
+<div class="flex items-center my-4">
+  <label for="toggle" class="flex items-center cursor-pointer">
+    <input
+      type="checkbox"
+      [id]="id"
+      [(ngModel)]="value"
+      class="sr-only peer"
+      [disabled]="disable"
+    />
+    <div
+      class="block custom-toggle relative bg-gray w-14 p-1 rounded-full before:absolute before:bg-white before:w-5 before:h-5 before:rounded-full before:transition-all before:duration-500 before:left-1 peer-checked:bg-green-500 peer-checked:before:left-8"
+    ></div>
+  </label>
+</div>
